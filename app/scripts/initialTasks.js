@@ -1,13 +1,17 @@
-import {fineractBaseUrl} from '../../environment';
 (function (mifosX) {
     var defineHeaders = function ($httpProvider, $translateProvider, ResourceFactoryProvider, HttpServiceProvider, $idleProvider, $keepaliveProvider, IDLE_DURATION, WARN_DURATION, KEEPALIVE_INTERVAL) {
-        // var mainLink = getLocation(window.location.href);
-        var baseApiUrl=fineractBaseUrl;
+        var mainLink = getLocation(window.location.href);
+        var baseApiUrl = "https://demo.mifos.io";
         var host = "";
         var portNumber = "";
+        if (mainLink.hostname != "") {
+            baseApiUrl = "https://" + mainLink.hostname + (mainLink.port ? ':' + mainLink.port : '');
+        }
+
         if (QueryParameters["baseApiUrl"]) {
             baseApiUrl = QueryParameters["baseApiUrl"];
         }
+        baseApiUrl='http://157.90.253.32:8200/fineract-provider&tenantIdentifier=default#/home'
         var queryLink = getLocation(baseApiUrl);
 
         //host = "https://" + queryLink.hostname + (queryLink.port ? ':' + queryLink.port : '');
@@ -46,7 +50,7 @@ import {fineractBaseUrl} from '../../environment';
         $translateProvider.preferredLanguage('en');
         $translateProvider.fallbackLanguage('en');
         //Timeout settings.
-        $idleProvider.idleDuration(IDLE_DURATION); //Idle time 
+        $idleProvider.idleDuration(IDLE_DURATION); //Idle time
         $idleProvider.warningDuration(WARN_DURATION); //warning time(sec)
         $keepaliveProvider.interval(KEEPALIVE_INTERVAL); //keep-alive ping
     };
