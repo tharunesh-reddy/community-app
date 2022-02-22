@@ -1,4 +1,4 @@
-import {fineractBaseUrl} from '../../../environment';
+import {fineractBaseUrl} from '../../environment';
 (function (mifosX) {
     var defineHeaders = function ($httpProvider, $translateProvider, ResourceFactoryProvider, HttpServiceProvider, $idleProvider, $keepaliveProvider, IDLE_DURATION, WARN_DURATION, KEEPALIVE_INTERVAL) {
         // var mainLink = getLocation(window.location.href);
