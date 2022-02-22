@@ -11,7 +11,7 @@
         if (QueryParameters["baseApiUrl"]) {
             baseApiUrl = QueryParameters["baseApiUrl"];
         }
-        baseApiUrl='http://157.90.253.32:8200/fineract-provider&tenantIdentifier=default#/home'
+        baseApiUrl='http://157.90.253.32:8080/fineract-provider&tenantIdentifier=default#/home'
         var queryLink = getLocation(baseApiUrl);
 
         //host = "https://" + queryLink.hostname + (queryLink.port ? ':' + queryLink.port : '');
